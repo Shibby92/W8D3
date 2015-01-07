@@ -105,11 +105,16 @@ public class LinkedListInt {
 		return tmp;
 	}
 	public void add(LinkedListInt other){
+		if(head==null){
+			this.head=other.head;
+			return;
+		}
 		Node last=head;
 		while(last.next!=null){
 			last=last.next;
 		}
 		last.next=other.head;
+		this.size+=other.size;
 	}
 	
 }
