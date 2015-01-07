@@ -1,3 +1,8 @@
+/**
+ * TEstiranje raznih funkcionalnosti
+ * @author harisarifovic
+ *
+ */
 public class LinkedListTest {
 
 	public static void main(String[] args) {

@@ -11,7 +11,10 @@ public class LinkedListInt {
 		this.head = null;
 		this.size = 0;
 	}
-
+/**
+ * Kreira novi Node
+ * @param value Vrijednost node-a
+ */
 	public void add(int value) {
 		Node newNode = new Node(value);
 		if (head == null) {
@@ -27,6 +30,11 @@ public class LinkedListInt {
 		current.next = newNode;
 		size++;
 	}
+	/**
+	 * Dodavanje node-a bilo gdje u listi
+	 * @param value Vrijednost node-a
+	 * @param index indeks gdje treba postaviti novi node
+	 */
 	public void add(int value,int index){
 		if (index < 0 || index > size) {
 			throw new IndexOutOfBoundsException("Index nije validan!");
@@ -54,7 +62,9 @@ public class LinkedListInt {
 		previous.next=insert;
 		size++;
 	}
-
+/**
+ * Ispisuje listu
+ */
 	public void printList() {
 		Node tmp = head;
 		while (tmp != null) {
@@ -62,7 +72,11 @@ public class LinkedListInt {
 			tmp = tmp.next;
 		}
 	}
-
+/**
+ * Node klasa 
+ * @author harisarifovic
+ *
+ */
 	private class Node {
 		public int value;
 		public Node next;
@@ -72,7 +86,10 @@ public class LinkedListInt {
 			this.next = null;
 		}
 	}
-
+/**
+ * Brisanje node-a sa liste
+ * @param index Index node-a koji se brise
+ */
 	public void removeAt(int index) {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException("Index nije validan!");
@@ -94,7 +111,10 @@ public class LinkedListInt {
 		current.next = null;
 
 	}
-
+/**
+ * Pretvara listu u niz integera
+ * @return Niz integera
+ */
 	public int[] toArray() {
 		int[]tmp=new int [size];
 		Node temp=head;
@@ -104,6 +124,10 @@ public class LinkedListInt {
 		}
 		return tmp;
 	}
+	/**
+	 * Dodavanje liste na listu
+	 * @param other Druga lista
+	 */
 	public void add(LinkedListInt other){
 		if(head==null){
 			this.head=other.head;
